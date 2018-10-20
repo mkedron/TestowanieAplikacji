@@ -28,6 +28,24 @@ class CalcTest {
     }
 
     @Test
+    void division() {
+        Float result = calc.divide(new Float(4),new Float(2));
+        assertEquals(result,new Float(2));
+    }
+
+    @Test
+    void divisionIntValues() {
+        Float result = calc.divide(6,3);
+        assertEquals(result, new Float(2));
+    }
+
+    @Test
+    void divideByZero() {
+        Float result = calc.divide(new Float(4), new Float(0));
+        assertNull(result);
+    }
+
+    @Test
     void outOfTheBoundSummary() {
         Integer result = calc.sum(100000,20000);
         if(result != null) {
